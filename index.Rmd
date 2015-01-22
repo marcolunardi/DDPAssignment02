@@ -67,7 +67,7 @@ mean(mtcars$mpg)
 
 ## Scatterplot for all cars within the mtcars dataset
 
-```{r,echo=FALSE}
+```{r,echo=FALSE, fig.height=6}
 mpgmean <- mean(mtcars$mpg)
 wtmean <- mean(mtcars$wt)
 mtcars$am <- as.factor(mtcars$am)
