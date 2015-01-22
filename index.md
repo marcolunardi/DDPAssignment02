@@ -31,7 +31,7 @@ So, the more efficient cars have a higher MPG and then lower fuel consumption.
 
 ## My Shiny App
 
-https://marcolunardi.shinyapps.io/DDP01APP/
+You can run the app at: https://marcolunardi.shinyapps.io/DDP01APP
 
 My App is designed to perform a very basic exploratory analysis on mtcars data, in order to get a first view
 about the interactions among the most relevant variables within the mtcars dataset.
