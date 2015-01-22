@@ -4,7 +4,7 @@
   <title>MT Cars Dataset Exploratory Analysis</title>
   <meta charset="utf-8">
   <meta name="description" content="MT Cars Dataset Exploratory Analysis">
-  <meta name="author" content="Marco Lunardi">
+  <meta name="author" content="Marco Lunardi  -  Please use arrow keys on your keyboard to move through slides, thank you !">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -33,8 +33,8 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>MT Cars Dataset Exploratory Analysis</h1>
-    <h2>Coursera Developling Data Products Pitch Presentation Assignment</h2>
-    <p>Marco Lunardi<br/></p>
+    <h2>Coursera Developing Data Products - Pitch Presentation Assignment</h2>
+    <p>Marco Lunardi  -  Please use arrow keys on your keyboard to move through slides, thank you !<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,29 +43,42 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>2: The MTCars Dataset</h2>
+    <h2>The MTCars Dataset</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>It&#39;s available into the &quot;datasets&quot; package in R</li>
-<li>At the R console prompt, type &quot;library(datasets)&quot; and then &quot;? mtcars&quot; to know more about it</li>
-<li>It gathers data about 32 cars from 1974</li>
-<li>Its main aim is to know which variable has the bigger influence on fuel consumption (MPG)</li>
-</ol>
+    <p>The MTCars Dataset is available into the &quot;datasets&quot; package in R.</p>
+
+<p>At the R console prompt you can type &quot;library(datasets)&quot;, and then &quot;? mtcars&quot; to see a brief description about it.</p>
+
+<p>This dataset gathers data about 32 cars from a 1974 issue of Motor Trend Magazine (quite old data actually), showing values for 11 variables.</p>
+
+<p>The main aim of the dataset is to analyze the influence on the efficiency of cars by some relevant variables (weight, transmission, engine size, acceleration, etc...),
+and in particular which type of transmission (manual or automatic) was the best in terms of fuel saving.</p>
+
+<p>The measure adopted to evaluate the cars efficiency is MPG (= Miles per US Gallon).</p>
+
+<p>So, the more efficient cars have a higher MPG and then lower fuel consumption.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>3: My Shiny App</h2>
+    <h2>My Shiny App</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>My App is designed to perform a very basic exploratory analysis on mtcars data</li>
-<li>You can choose the cylinders number and the transmission type</li>
-</ol>
+    <p><a href="https://marcolunardi.shinyapps.io/DDP01APP/">https://marcolunardi.shinyapps.io/DDP01APP/</a></p>
+
+<p>My App is designed to perform a very basic exploratory analysis on mtcars data, in order to get a first view
+about the interactions among the most relevant variables within the mtcars dataset.</p>
+
+<p>On the upper left side of the app page you can set the values for the engine size, through the cylinders number (from 4 to 8), and for the transmission type: manual or automatic.</p>
+
+<p>Once you chose these two values, the app dynamically changes the content on the right side of the app page.
+It changes the content of the title reflecting your choices, it computes the average weight and MPG for the cars that correspond to your criteria, and it draws a scatterplot in which each point represents just the cars you selected through your settings (red points if &quot;manual transmission&quot;, black points if &quot;automatic&quot;).</p>
+
+<p>The following slide computes the averages of weights and MPGs for all the cars in the dataset, while in the fifth and last slide you can find the same scatterplot shown in the app, but this time containing all cars within the dataset. You can then compare the results from the app with these plot and values to draw your first basic conclusions about mtcars data.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -73,24 +86,37 @@
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>4: Graph with all cars in the dataset</h2>
+    <h2>Weight and MPG averages for all cars in the dataset</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">data &lt;- mtcars
-data$am &lt;- sub(0, &quot;Automatic&quot;, data$am)
-data$am &lt;- sub(1, &quot;Manual&quot;, data$am)
-data$am &lt;- as.factor(data$am)
-mpgmean &lt;- mean(data$mpg)
-wtmean &lt;- mean(data$wt)
-plot(cars$wt, cars$mpg, col=cars$am, xlim=c(1,6), ylim=c(10,40), 
-     ylab=&quot;MPG = Miles per Gallon&quot;, xlab=&quot;Weight (lbs/1000)&quot;, cex.main=1,
-     main=&quot;MPG by Weight; Orange Lines =  mean weight and MPG for all cars&quot;,
-     pch=16, cex=3)
-abline(h = mpgmean, col=&quot;orange&quot;, lwd=4)
-abline(v = wtmean, col=&quot;orange&quot;, lwd=4)
+    <p>Weights average (lbs/1000):</p>
+
+<pre><code class="r">mean(mtcars$wt)
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+<pre><code>## [1] 3.21725
+</code></pre>
+
+<p>MPGs (Miles per US Gallon) average:</p>
+
+<pre><code class="r">mean(mtcars$mpg)
+</code></pre>
+
+<pre><code>## [1] 20.09062
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Scatterplot for all cars within the mtcars dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+<p>Please see R code into index.Rmd at: <a href="https://github.com/marcolunardi/DDPAssignment02">https://github.com/marcolunardi/DDPAssignment02</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -102,20 +128,26 @@ abline(v = wtmean, col=&quot;orange&quot;, lwd=4)
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='2: The MTCars Dataset'>
+        data-slide=1 title='The MTCars Dataset'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='3: My Shiny App'>
+        data-slide=2 title='My Shiny App'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='4: Graph with all cars in the dataset'>
+        data-slide=3 title='Weight and MPG averages for all cars in the dataset'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Scatterplot for all cars within the mtcars dataset'>
+         4
       </a>
     </li>
   </ul>
