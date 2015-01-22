@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MT Cars Dataset Exploratory Analysis</title>
+  <meta charset="utf-8">
+  <meta name="description" content="MT Cars Dataset Exploratory Analysis">
+  <meta name="author" content="Marco Lunardi">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>MT Cars Dataset Exploratory Analysis</h1>
+    <h2>Coursera Developling Data Products Pitch Presentation Assignment</h2>
+    <p>Marco Lunardi<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>2: The MTCars Dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>It&#39;s available into the &quot;datasets&quot; package in R</li>
+<li>At the R console prompt, type &quot;library(datasets)&quot; and then &quot;? mtcars&quot; to know more about it</li>
+<li>It gathers data about 32 cars from 1974</li>
+<li>Its main aim is to know which variable has the bigger influence on fuel consumption (MPG)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>3: My Shiny App</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>My App is designed to perform a very basic exploratory analysis on mtcars data</li>
+<li>You can choose the cylinders number and the transmission type</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>4: Graph with all cars in the dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">data &lt;- mtcars
+data$am &lt;- sub(0, &quot;Automatic&quot;, data$am)
+data$am &lt;- sub(1, &quot;Manual&quot;, data$am)
+data$am &lt;- as.factor(data$am)
+mpgmean &lt;- mean(data$mpg)
+wtmean &lt;- mean(data$wt)
+plot(cars$wt, cars$mpg, col=cars$am, xlim=c(1,6), ylim=c(10,40), 
+     ylab=&quot;MPG = Miles per Gallon&quot;, xlab=&quot;Weight (lbs/1000)&quot;, cex.main=1,
+     main=&quot;MPG by Weight; Orange Lines =  mean weight and MPG for all cars&quot;,
+     pch=16, cex=3)
+abline(h = mpgmean, col=&quot;orange&quot;, lwd=4)
+abline(v = wtmean, col=&quot;orange&quot;, lwd=4)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='2: The MTCars Dataset'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='3: My Shiny App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='4: Graph with all cars in the dataset'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
