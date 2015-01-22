@@ -37,7 +37,6 @@ My App is designed to perform a very basic exploratory analysis on mtcars data, 
 about the interactions among the most relevant variables within the mtcars dataset.
 
 On the upper left side of the app page you can set the values for the engine size, through the cylinders number (from 4 to 8), and for the transmission type: manual or automatic.
-
 Once you chose these two values, the app dynamically changes the content on the right side of the app page.
 It changes the content of the title reflecting your choices, it computes the average weight and MPG for the cars that correspond to your criteria, and it draws a scatterplot in which each point represents just the cars you selected through your settings (red points if "manual transmission", black points if "automatic").
 
@@ -75,4 +74,5 @@ mean(mtcars$mpg)
 
 ![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png) 
 
-Please see R code into index.Rmd at: https://github.com/marcolunardi/DDPAssignment02
+Please note: the R code to plot the graph has been hidden to save space.
+To see it, please look into the "index.Rmd" file at: https://github.com/marcolunardi/DDPAssignment02
