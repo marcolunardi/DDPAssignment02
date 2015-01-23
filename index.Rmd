@@ -27,7 +27,7 @@ The measure adopted to evaluate the cars efficiency is MPG (= Miles per US Gallo
 So, the more efficient cars have a higher MPG and then lower fuel consumption.
 
 
----
+--- .class #id
 
 ## My Shiny App
 
@@ -42,7 +42,7 @@ it changes the content of the title reflecting your choices, it computes the ave
 
 The following slide computes the averages of weights and MPGs for all the cars in the dataset, and the fifth and last slide uses R code to plot the same scatterplot shown in the app, but this time containing all cars within the dataset. You can then compare the results from the app to these plot and values to draw your first basic conclusions about mtcars data.
 
----
+--- {bg: yellow}
 
 ## Weight and MPG averages for all cars in the dataset
 
