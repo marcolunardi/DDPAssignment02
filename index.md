@@ -37,10 +37,10 @@ My App is designed to perform a very basic exploratory analysis on mtcars data, 
 about the interactions among the most relevant variables within the mtcars dataset.
 
 On the upper left side of the app page you can set the values for the engine size, through the cylinders number (from 4 to 8), and for the transmission type: manual or automatic.
-Once you chose these two values, the app dynamically changes the content on the right side of the app page.
-It changes the content of the title reflecting your choices, it computes the average weight and MPG for the cars that correspond to your criteria, and it draws a scatterplot in which each point represents just the cars you selected through your settings (red points if "manual transmission", black points if "automatic").
+Once you chose these two values, the app dynamically changes the content on the right side of the app page:
+it changes the content of the title reflecting your choices, it computes the average weight and MPG for the cars corresponding to your criteria, and it draws a scatterplot of the cars you selected through your settings (red points if "manual transmission", black points if "automatic").
 
-The following slide computes the averages of weights and MPGs for all the cars in the dataset, while in the fifth and last slide you can find the same scatterplot shown in the app, but this time containing all cars within the dataset. You can then compare the results from the app with these plot and values to draw your first basic conclusions about mtcars data.
+The following slide computes the averages of weights and MPGs for all the cars in the dataset, and the fifth and last slide uses R code to plot the same scatterplot shown in the app, but this time containing all cars within the dataset. You can then compare the results from the app to these plot and values to draw your first basic conclusions about mtcars data.
 
 ---
 
@@ -72,7 +72,14 @@ mean(mtcars$mpg)
 
 ## Scatterplot for all cars within the mtcars dataset
 
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png) 
 
-Please note: the R code to plot the graph has been hidden to save space.
-To see it, please look into the "index.Rmd" file at: https://github.com/marcolunardi/DDPAssignment02
+```r
+mpgmean<-mean(mtcars$mpg); wtmean<-mean(mtcars$wt); mtcars$am<-as.factor(mtcars$am)
+plot(mtcars$wt, mtcars$mpg, col=mtcars$am, xlim=c(1,6), ylim=c(10,40), 
+     ylab="MPG = Miles per Gallon", xlab="Weight (lbs/1000)", cex.main=1,
+     main="MPG by Weight; Orange Lines =  mean weight and MPG for all cars",
+     pch=16, cex=2)
+abline(h = mpgmean, col="orange", lwd=4); abline(v = wtmean, col="orange", lwd=4)
+```
+
+![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png) 
