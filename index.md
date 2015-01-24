@@ -19,7 +19,7 @@ At the R console prompt you can type "library(datasets)", and then "? mtcars" to
 
 This dataset gathers data about 32 cars from a 1974 issue of Motor Trend Magazine (quite old data actually), showing values for 11 variables.
 
-The main aim of the dataset is to analyze the influence on the efficiency of cars by some relevant variables (weight, transmission, engine size, acceleration, etc...),
+The main aim of the dataset is to analyze the influence on the efficiency of cars by some relevant variables (weight, transmission, engine size, acceleration, ...),
 and in particular which type of transmission (manual or automatic) was the best in terms of fuel saving.
 
 The measure adopted to evaluate the cars efficiency is MPG (= Miles per US Gallon).
